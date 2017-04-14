@@ -1,25 +1,22 @@
-package °íº´Áö_30202;
+package ê³ ë³‘ì§€_30202;
 
 import java.io.*;
 import java.util.*;
 
 public class Engine {
-	String FilePath = "C:\\test\\30202_°íº´Áö.txt";
+	String FilePath = "C:\\test\\30202_ê³ ë³‘ì§€.txt";
 	Scanner scan = new Scanner(System.in);
+	Book b = new Book();
 
 	void Print_Menu() {
-
-		System.out.println("1. ÀüÃ¼ µµ¼­ ¸ñ·Ï");
-		System.out.println("2. µµ¼­ °Ë»ö");
-		System.out.println("3. ½Å±Ô µµ¼­ Ãß°¡");
-		System.out.println("4. ³ëÈÄ µµ¼­ Æó±â");
-		System.out.println("0. ÇÁ·Î±×·¥ Á¾·á");
+		System.out.println("1. ì „ì²´ ë„ì„œ ëª©ë¡");
+		System.out.println("2. ë„ì„œ ê²€ìƒ‰");
+		System.out.println("3. ì‹ ê·œ ë„ì„œ ì¶”ê°€");
+		System.out.println("4. ë…¸í›„ ë„ì„œ íê¸°");
+		System.out.println("0. í”„ë¡œê·¸ë¨ ì¢…ë£Œ");
 	}
 
 	void Print_Book() throws FileNotFoundException {
-
-		System.out.println("ÀüÃ¼ µµ¼­ ¸ñ·Ï");
-
 		BufferedReader br = new BufferedReader(new FileReader(FilePath));
 		String str = "";
 		int count = 1;
@@ -30,41 +27,36 @@ public class Engine {
 				count++;
 			}
 		} catch (IOException e) {
-			System.out.println("ÆÄÀÏÀ» ÀĞ¾î¿Ã ¼ö ¾ø½À´Ï´Ù");
-			System.out.println("ÆÄÀÏÀ» Ã£À» ¼ö ¾ø½À´Ï´Ù");
+			System.out.println("íŒŒì¼ì„ ì½ì–´ì˜¬ ìˆ˜ ì—†ìŠµë‹ˆë‹¤");
+			System.out.println("íŒŒì¼ì„ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤");
 			e.printStackTrace();
 		}
 		count--;
-		System.out.println("ÀüÃ¼ µµ¼­ ±Ç¼ö : " + count + "±Ç");
+		System.out.println("ì „ì²´ ë„ì„œ ê¶Œìˆ˜ : " + count + "ê¶Œ");
 	}
 
 	void Search_Book() throws FileNotFoundException {
-		
 		BufferedReader br = new BufferedReader(new FileReader(FilePath));
 		String keyword = "";
 		String str = "";
 		String tmp = "";
 		int count = 0;
 
-		System.out.println("µµ¼­ °Ë»ö");
-		System.out.println();
-
-		System.out.println("°Ë»ö ¹æ¹ı");
-		System.out.println("1. ÅëÇÕ °Ë»ö");
-		System.out.println("2. »ó¼¼ °Ë»ö");
-		System.out.println("0. Ãë¼Ò");
-		System.out.print("°Ë»öÇÒ ¹æ¹ıÀ» ¼±ÅÃÇÏ¼¼¿ä : ");
+		System.out.println("ê²€ìƒ‰ ë°©ë²•");
+		System.out.println("1. í†µí•© ê²€ìƒ‰");
+		System.out.println("2. ìƒì„¸ ê²€ìƒ‰");
+		System.out.print("ê²€ìƒ‰í•  ë°©ë²•ì„ ì„ íƒí•˜ì„¸ìš” : ");
 		int choice = scan.nextInt();
 		scan.nextLine();
-		
-		System.out.print("°Ë»ö ¹æ¹ı : ");
+
+		System.out.print("ê²€ìƒ‰ ë°©ë²• : ");
 
 		switch (choice) {
 		case 1:
-			System.out.println("ÅëÇÕ °Ë»ö");
+			System.out.println("í†µí•© ê²€ìƒ‰");
 			System.out.println();
-			
-			System.out.print("°Ë»öÇÒ Å°¿öµå¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+
+			System.out.print("ê²€ìƒ‰í•  í‚¤ì›Œë“œë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 			keyword = scan.nextLine();
 
 			try {
@@ -77,21 +69,22 @@ public class Engine {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			System.out.println("°Ë»ö µµ¼­ ±Ç¼ö : " + count + "±Ç");
+			System.out.println("ê²€ìƒ‰ ë„ì„œ ê¶Œìˆ˜ : " + count + "ê¶Œ");
 			break;
 		case 2:
-			System.out.println("»ó¼¼ °Ë»ö");
+			System.out.println("ìƒì„¸ ê²€ìƒ‰");
 			System.out.println();
-			
-			System.out.println("°Ë»ö Á¶°Ç");
-			System.out.println("1. Ã¥ÀÌ¸§");
-			System.out.println("2. ÀúÀÚ");
-			System.out.println("3. ÃâÆÇ»ç");
-			System.out.print("°Ë»öÇÒ Á¶°ÇÀ» ÀÔ·ÂÇÏ¼¼¿ä : ");
+
+			System.out.println("ê²€ìƒ‰ ì¡°ê±´");
+			System.out.println("1. ì±…ì´ë¦„");
+			System.out.println("2. ì €ì");
+			System.out.println("3. ì¶œíŒì‚¬");
+			System.out.println("0. ì·¨ì†Œ");
+			System.out.print("ê²€ìƒ‰í•  ì¡°ê±´ì„ ì…ë ¥í•˜ì„¸ìš” : ");
 			choice = scan.nextInt();
 			scan.nextLine();
 
-			System.out.print("°Ë»öÇÒ Å°¿öµå¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+			System.out.print("ê²€ìƒ‰í•  í‚¤ì›Œë“œë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 			keyword = scan.nextLine();
 
 			try {
@@ -106,41 +99,49 @@ public class Engine {
 					}
 				}
 				if (count == 0)
-					System.out.println("°Ë»ö °á°ú ¾øÀ½");
+					System.out.println("ê²€ìƒ‰ ê²°ê³¼ ì—†ìŒ");
 				else
-					System.out.println("°Ë»ö µµ¼­ ±Ç¼ö : " + count + "±Ç");
+					System.out.println("ê²€ìƒ‰ ë„ì„œ ê¶Œìˆ˜ : " + count + "ê¶Œ");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			break;
-		case 0:
-			System.out.println("Ãë¼ÒÇÕ´Ï´Ù");
 			break;
 		}
 	}
 
 	public void Input_Data() throws IOException {
+		try {
+			System.out.print("ì±… ì´ë¦„ : ");
+			b.setName(scan.nextLine());
+			System.out.print("ì € ì : ");
+			b.setAuthor(scan.nextLine());
+			System.out.print("ì¶œíŒì‚¬ : ");
+			b.setPublisher(scan.nextLine());
+			System.out.print("ê°€ ê²© : ");
+			b.setCost(scan.nextInt());
+			System.out.println();
+		} catch (Exception e) {
+			System.out.println("ê°€ê²©ì—” ìˆ«ìë§Œ ì…ë ¥í•´ ì£¼ì„¸ìš”");
+			System.out.println();
+			scan.nextLine();
+			Input_Data();
+		}
+		
+	}
 
-		Book b = new Book();
+	void Insert_Book() throws IOException {
+		System.out.println("ì¶”ê°€í•  ë„ì„œì˜ ì •ë³´ë¥¼ ì…ë ¥í•˜ì„¸ìš”");
+		
+		Input_Data();
 
-		System.out.print("Ã¥ ÀÌ¸§ : ");
-		b.setName(scan.nextLine());
-		System.out.print("Àú ÀÚ : ");
-		b.setAuthor(scan.nextLine());
-		System.out.print("ÃâÆÇ»ç : ");
-		b.setPublisher(scan.nextLine());
-		System.out.print("°¡ °İ : ");
-		b.setCost(scan.nextLine());
+		System.out.println("ì…ë ¥í•œ ì •ë³´ë¥¼ í™•ì¸í•˜ì„¸ìš”");
+		System.out.println("ì±… ì´ë¦„ : " + b.getName());
+		System.out.println("ì € ì : " + b.getAuthor());
+		System.out.println("ì¶œíŒì‚¬ : " + b.getPublisher());
+		System.out.println("ê°€ ê²© : " + b.getCost());
 		System.out.println();
 
-		System.out.println("ÀÔ·ÂÇÑ Á¤º¸¸¦ È®ÀÎÇÏ¼¼¿ä");
-		System.out.println("Ã¥ ÀÌ¸§ : " + b.getName());
-		System.out.println("Àú ÀÚ : " + b.getAuthor());
-		System.out.println("ÃâÆÇ»ç : " + b.getPublisher());
-		System.out.println("°¡ °İ : " + b.getCost());
-		System.out.println();
-
-		System.out.print("ÀÔ·ÂÇÑ Á¤º¸°¡ ¸Â½À´Ï±î?[y/n] : ");
+		System.out.print("ì…ë ¥í•œ ì •ë³´ê°€ ë§ìŠµë‹ˆê¹Œ?[y/n] : ");
 		String check = scan.next();
 		scan.nextLine();
 
@@ -153,31 +154,18 @@ public class Engine {
 			break;
 		case "n":
 			System.out.println();
-			System.out.println("´Ù½Ã ÀÔ·ÂÇØ ÁÖ¼¼¿ä");
-			Input_Data();
+			System.out.println("ë‹¤ì‹œ ì…ë ¥í•´ ì£¼ì„¸ìš”");
+			Insert_Book();
 			break;
 		}
 	}
 
-	void Insert_Book() throws IOException {
-
-		System.out.println("½Å±Ô µµ¼­ Ãß°¡");
-
-		System.out.println("Ãß°¡ÇÒ µµ¼­ÀÇ Á¤º¸¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
-
-		Input_Data();
-	}
-
 	void Delete_Book() throws IOException {
-
-		System.out.println("³ëÈÄ µµ¼­ Æó±â");
-		System.out.println();
-
 		String tmpFilePath = FilePath + ".tmp";
 
 		Print_Book();
 
-		System.out.print("Æó±âÇÒ µµ¼­ÀÇ ¶óÀÎ ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("íê¸°í•  ë„ì„œì˜ ë¼ì¸ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 		int DeleteLineBook = scan.nextInt();
 
 		BufferedReader br = new BufferedReader(new FileReader(FilePath));
