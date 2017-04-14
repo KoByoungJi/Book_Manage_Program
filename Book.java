@@ -1,10 +1,10 @@
-package °íº´Áö_30202;
+package ê³ ë³‘ì§€_30202;
 
 public class Book {
 	private String Name;
 	private String Author;
 	private String Publisher;
-	private String Cost;
+	private int Cost;
 	
 	public String getName() {
 		return Name;
@@ -24,10 +24,10 @@ public class Book {
 	public void setPublisher(String publisher) {
 		Publisher = publisher;
 	}
-	public String getCost() {
+	public int getCost() {
 		return Cost;
 	}
-	public void setCost(String cost) {
+	public void setCost(int cost) {
 		Cost = cost;
 	}	
 }
