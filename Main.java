@@ -1,4 +1,4 @@
-package °íº´Áö_30202;
+package ê³ ë³‘ì§€_30202;
 
 import java.io.*;
 import java.util.*;
@@ -10,7 +10,7 @@ public class Main {
 		
 		Engine e = new Engine();
 
-		System.out.println("<µµ¼­ °ü¸® ÇÁ·Î±×·¥ ÀÔ´Ï´Ù>");
+		System.out.println("<ë„ì„œ ê´€ë¦¬ í”„ë¡œê·¸ë¨ ì…ë‹ˆë‹¤>");
 		System.out.println();
 		
 
@@ -21,37 +21,45 @@ public class Main {
 			e.Print_Menu();
 			choice = -1;
 			
-			System.out.print("¸Ş´º¸¦ ¼±ÅÃÇÏ¼¼¿ä : ");
+			System.out.print("ë©”ë‰´ë¥¼ ì„ íƒí•˜ì„¸ìš” : ");
 			choice = scan.nextInt();
 			scan.nextLine();
 			System.out.println();
 			
-			System.out.print("¼±ÅÃÇÑ ¸Ş´º : ");
+			System.out.print("ì„ íƒí•œ ë©”ë‰´ : ");
 			
 			switch (choice) {
 			case 1:
+				System.out.println("ì „ì²´ ë„ì„œ ëª©ë¡");
+				System.out.println();
 				e.Print_Book();
 				System.out.println();
 				break;
 			case 2:
+				System.out.println("ë„ì„œ ê²€ìƒ‰");
+				System.out.println();
 				e.Search_Book();
 				System.out.println();
 				break;
 			case 3:
+				System.out.println("ì‹ ê·œ ë„ì„œ ì¶”ê°€");
+				System.out.println();
 				e.Insert_Book();
 				System.out.println();
 				break;
 			case 4:
+				System.out.println("ë…¸í›„ ë„ì„œ íê¸°");
+				System.out.println();
 				e.Delete_Book();
 				System.out.println();
 				break;
 			case 0:
-				System.out.println("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù");
+				System.out.println("í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤");
 				System.out.println();
 				System.exit(0);
 				break;
 			default:
-				System.out.println("´Ù½Ã ÀÔ·ÂÇÏ¼¼¿ä");
+				System.out.println("ë‹¤ì‹œ ì…ë ¥í•˜ì„¸ìš”");
 			}
 		}
 	}
